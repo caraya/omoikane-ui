@@ -1,0 +1,114 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Explainers/Styles vs Typography" />
+
+# Styles vs Typography — when to use each
+
+This short explainer describes the different responsibilities of the `Styles` layer and a higher-level `Typography` layer (semantic text components or tokens). Keeping them separate makes the system predictable, accessible, and easy to theme.
+
+## `Styles` (global foundation)
+
+- Responsible for loading fonts, injecting base CSS variables, resets, and lightweight utility classes.
+- Examples:
+  - font-face / Google Fonts preload, `--font-sans` variable
+  - color tokens (`--color-text`, `--color-muted`), spacing and base rhythm tokens
+  - small utility presets like `.recursive-body`, `.recursive-heading`, or font-variation helper classes
+- Scope: global (wrap your app once with `Styles` at the root or include it in your app shell).
+- Good for: configuring the design system, making tokens and fonts available everywhere, and providing quick utilities for prototyping or docs.
+
+```tsx
+import { Styles } from '../src/components/Styles';
+
+function App({ children }) {
+  return <Styles>{children}</Styles>;
+}
+```
+
+## `Typography` (semantic components / tokens)
+
+- Responsible for how text is expressed in UI components: semantic variants, scale, responsive sizes, accessible line-height and weight choices.
+- Examples of what a `Typography` layer provides:
+  - `Heading`, `Body`, `Label`, `Caption`, `Code` components
+  - `variant` props (e.g., `level="h1" | "h2" | "lead"`) that map to tokenized font-size/line-height/letter-spacing
+  - accessibility defaults (sensible contrast, `aria` considerations for headings)
+- Scope: component-level styling that consumes tokens from `Styles`.
+- Good for: ensuring consistent typographic rhythm across the app, choosing the right semantic element for headings and paragraphs, and encapsulating responsive rules.
+
+```tsx
+// Example usage (pseudo-code)
+<Styles>
+  <Heading level="h1">Welcome</Heading>
+  <Body variant="lead">A short leading paragraph that introduces the page.</Body>
+</Styles>
+```
+
+## Why keep them separate?
+
+- Single responsibility: `Styles` sets up the environment (fonts, tokens) while `Typography` decides how to express text using those tokens.
+- The separation enables theming and runtime swaps: you can change font-loading or token values in `Styles` without rewriting every text component.
+- Reusability: `Typography` components are small, predictable building blocks that rely on the tokens `Styles` exposes.
+
+## Practical guidance
+
+- Always mount `Styles` near the root of your app or in Storybook's preview so tokens and fonts are available everywhere.
+- Prefer `Typography` components for semantic UI text (headings, body copy, labels) so you get consistent sizes and accessible defaults.
+- Use `Styles` utility classes or the interactive Storybook knobs when you need quick experiments with font-variation-settings or to demonstrate presets in docs.
+
+## Do `Typography` components inherit from `Styles`?
+
+Yes — `Typography` components typically *inherit* the foundation `Styles` provides through the CSS cascade and CSS variables. In practice:
+
+- `Styles` sets tokens and anchors (e.g. `--font-sans`, `--color-text`, base line-height).
+- `Typography` reads those tokens (e.g. `fontFamily: var(--font-sans)`) and applies semantic sizes, line-heights, and accessible defaults.
+- This separation keeps responsibilities clear: change font-loading or token values in `Styles` and `Typography` components automatically pick up those changes.
+
+The concrete examples below show this flow: `Styles` provides tokens, and the tiny `Heading`/`Body` components consume them.
+
+## Concrete examples (inline)
+
+Below are very small, self-contained example components that illustrate how a `Typography` layer might consume tokens from `Styles`. These are meant for the docs — in production you would place them in `src/components/typography`.
+
+```tsx
+// Example: a tiny Heading and Body components using tokens from Styles
+import React from 'react';
+
+export function Heading({ children, level = 'h2' }: { children: React.ReactNode; level?: 'h1'|'h2'|'h3'|'h4' }) {
+  const Tag = level as any;
+  return (
+    <Tag style={{
+      fontFamily: 'var(--font-sans)',
+      lineHeight: 1.15,
+      margin: 0,
+      color: 'var(--color-text)'
+    }}>{children}</Tag>
+  );
+}
+
+export function Body({ children, variant = 'normal' }: { children: React.ReactNode; variant?: 'normal'|'lead' }) {
+  const style = variant === 'lead' ? { fontSize: 18, lineHeight: 1.6 } : { fontSize: 16, lineHeight: 1.5 };
+  return (
+    <p style={{ ...style, margin: 0, color: 'var(--color-text)' }}>{children}</p>
+  );
+}
+
+// Usage inside the docs
+<Styles>
+  <div style={{ padding: 16 }}>
+    <Heading level="h1">Design system heading</Heading>
+    <div style={{ height: 8 }} />
+    <Body variant="lead">This is a short leading paragraph that consumes tokens from `Styles` (font-family, color, rhythm).</Body>
+  </div>
+</Styles>
+```
+
+## Example: interactive docs
+
+- `Styles` can expose small utility classes like `.recursive-body` that set `font-variation-settings` for a quick preview.
+- The `Interactive` story in the `Styles` story set shows how knobs can drive the variable font axes while `Typography` components remain the recommended way to render production UI text.
+
+## Summary
+
+- `Styles` = global foundation (fonts, tokens, utilities).
+- `Typography` = semantic layer (components, variants, accessibility).
+
+If you'd like, I can add a short `Typography` folder with example `Heading`/`Body` components and a Storybook story that demonstrates the recommended usage pattern.

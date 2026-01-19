@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.breadcrumbs-container {
+  width: 100%;
+}
+
+.breadcrumbs-left {
+  justify-content: flex-start;
+}
+
+.breadcrumbs-center {
+  justify-content: center;
+}
+
+.breadcrumbs-right {
+  justify-content: flex-end;
+}

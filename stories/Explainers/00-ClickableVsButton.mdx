@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Explainers/Clickable vs Button" />
+
+# Clickable vs Button
+
+In the Omoikane Design System, both `Clickable` and `Button` allow users to trigger actions, but they serve different architectural and semantic purposes. Understanding when to use which is key to building consistent UI.
+
+## At a Glance
+
+**Button**: A standard, styled UI element for primary actions. | You need a standard "call to action" (e.g., Submit, Cancel, Save) that matches the system's look and feel.
+
+**Clickable**: A primitive wrapper that makes *anything* interactive. | You need to make a custom element (like a card, a row, or an icon) interactive, or you need full control over the `hover/press` visual states.
+
+---
+
+## Button
+
+The `Button` component is a high-level component that comes pre-packaged with specific styles (Primary, Secondary, Tertiary, Destructive). It enforces the design system's visual language.
+
+**Characteristics:**
+- Pre-defined padding, colors, and typography.
+- Standard variants (Solid, Outline, Ghost).
+- Limited customization (by design) to ensure consistency.
+
+**Example:**
+```tsx
+<Button intent="primary">Save Changes</Button>
+```
+
+---
+
+## Clickable
+The `Clickable` component is a low-level primitive. It handles the *behavior* of being interactive (roles, keyboard support, focus management, hover states) without enforcing a specific *look*.
+
+**Characteristics:**
+- No visual styles by default (it's "headless" regarding UI).
+- Renders as either `<button>` or `<a>` depending on `href`.
+- Supports the **Render Prop** pattern to allow children to react to state changes (`hovered`, `focused`, `pressed`).
+- Ideal for building new interactive components.
+
+**Example:**
+```tsx
+<Clickable onClick={() => alert('Clicked!')}>
+  {({ hovered, pressed }) => (
+    <div className={hovered ? "bg-gray-100" : "bg-white"}>
+      Custom Interactive Card
+    </div>
+  )}
+</Clickable>
+```
+
+## Decision Tree
+
+1. **Do you need a standard "Submit" or "Cancel" button?**
+   👉 Use `Button`.
+
+2. **Are you building a custom UI element (like a clickable user avatar or a complex list item)?**
+   👉 Use `Clickable`.
+
+3. **Do you need a link that looks like a button?**
+   👉 Use `Button` with `link={true}` or `href`.
+
+4. **Do you need a custom area of the screen to be valid for keyboard navigation and screen readers?**
+   👉 Use `Clickable`.
