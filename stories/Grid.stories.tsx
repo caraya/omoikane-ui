@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Grid, Cell } from '../src/components/Grid';
 
 const meta = {
-  title: 'Components/Grid',
+  title: 'Layout/Grid',
   component: Grid,
   tags: ['autodocs'],
   parameters: {

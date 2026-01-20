@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ColorPicker } from '../src/components/ColorPicker';
 
 const meta = {
-  title: 'Components/Color.js/ColorPicker',
+  title: 'Color.js/ColorPicker',
   component: ColorPicker,
   tags: ['autodocs'],
   argTypes: {

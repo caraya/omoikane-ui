@@ -1,0 +1,3 @@
+[submodule "theme-generator"]
+	path = theme-generator
+	url = https://github.com/caraya/theme-generator.git

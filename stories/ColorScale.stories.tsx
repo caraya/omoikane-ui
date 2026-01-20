@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ColorScale } from '../src/components/ColorScale';
 
 const meta = {
-  title: 'Components/Color.js/ColorScale',
+  title: 'Color.js/ColorScale',
   component: ColorScale,
   tags: ['autodocs'],
   argTypes: {

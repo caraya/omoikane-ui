@@ -1,0 +1,52 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Explainers/CustomGrid" />
+
+# CustomGrid and GridItem
+
+`CustomGrid` is a simple, flexible wrapper around CSS Grid that favors explicit placement of children while still allowing normal auto-placement flow. Use `GridItem` to place its child into a specific `col` and optional `row`. If you reference a `row` that doesn't yet exist, the grid will expand and create that row for you.
+
+This component is intended for layouts where content needs to be positioned precisely (dashboards, complex layouts, kanban-like boards), or where nested grids provide independent coordinate spaces. It intentionally differs from the fixed `Grid` primitive which is used for uniform, regular grids.
+
+## Key concepts
+
+- Explicit placement: pass `col`, `row`, `colSpan`, and `rowSpan` to `GridItem` to control where an element appears.
+- Auto-placement: omit `row` to let the grid auto-place items into the next available row for the given column.
+- Nested grids: place a `CustomGrid` inside a `GridItem` to create sub-layouts. When you set `subgrid={true}`, the component will emit `grid-template-columns: subgrid` which relies on experimental browser support — treat as progressive enhancement.
+
+## Basic usage
+
+```jsx
+import React from 'react';
+import CustomGrid, { GridItem } from '../../src/components/CustomGrid';
+
+export default function Example() {
+  return (
+    <CustomGrid columns={4} gap={12} rowHeight={72}>
+      <GridItem col={1} row={1}>Top-left</GridItem>
+      <GridItem col={2} row={1} colSpan={2}>Wide item</GridItem>
+      <GridItem col={1} row={4}>Placed in row 4 explicitly</GridItem>
+      <GridItem col={4}>Auto-placed in column 4</GridItem>
+    </CustomGrid>
+  );
+}
+```
+
+## Props
+
+- `CustomGrid`:
+  - `columns` (number) — how many grid columns to expose (default 4).
+  - `gap` (string | number) — gap between cells; numeric values treated as pixels.
+  - `rowHeight` (string | number) — `grid-auto-rows` value for implicit rows.
+  - `subgrid` (boolean) — emit `subgrid` for `grid-template-columns` (experimental).
+
+- `GridItem`:
+  - `col` (number, 1-based) — start column for the item.
+  - `row` (number, 1-based, optional) — start row for the item; grid will grow if row doesn't exist.
+  - `colSpan` / `rowSpan` — how many columns/rows to span.
+
+## Notes and tips
+
+- Using explicit `row` values can be useful for timeline or schedule UIs where rows represent time slots and you want to place items far in the future without inserting empty DOM rows.
+- `subgrid` is supported in a subset of browsers — it should be used as an enhancement and can be toggled with the `subgrid` prop in stories.
+- For accessibility and responsiveness, consider how items reflow on small screens; combine `col` and `colSpan` with media queries in your layout wrapper if needed.

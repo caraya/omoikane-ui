@@ -16,6 +16,8 @@ interface PopoverProps {
   offset?: number;
   showArrow?: boolean;
   className?: string;
+  /** When true (default) trap focus inside the popover panel. Set false for tooltip-like popovers. */
+  trapFocus?: boolean;
 }
 
 export const Popover: React.FC<PopoverProps> = ({
@@ -29,6 +31,7 @@ export const Popover: React.FC<PopoverProps> = ({
   offset = 8,
   showArrow = true,
   className,
+  trapFocus = true,
 }) => {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
@@ -120,11 +123,65 @@ export const Popover: React.FC<PopoverProps> = ({
 
   if (!isOpen) return null;
 
+  React.useEffect(() => {
+    if (!isOpen || !trapFocus) return;
+    // focus the panel after it is positioned
+    requestAnimationFrame(() => {
+      panelRef.current?.focus();
+    });
+  }, [isOpen, pos, trapFocus]);
+
+  // focus trap: keep Tab navigation inside the panel when open
+  React.useEffect(() => {
+    if (!isOpen || !trapFocus) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const getFocusable = (): HTMLElement[] => {
+      if (!panel) return [];
+      const selectors = [
+        'a[href]',
+        'button:not([disabled])',
+        'textarea:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])',
+      ];
+      return Array.from(panel.querySelectorAll<HTMLElement>(selectors.join(','))).filter((el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+    };
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusable();
+      if (focusable.length === 0) {
+        e.preventDefault();
+        panel.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+
+      if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && (active === first || active === panel)) {
+        e.preventDefault();
+        last.focus();
+      }
+    };
+
+    panel.addEventListener('keydown', onKey);
+    return () => panel.removeEventListener('keydown', onKey);
+  }, [isOpen]);
+
   return createPortal(
     <div aria-hidden={false}>
       <div
         ref={panelRef}
         role="dialog"
+        tabIndex={-1}
+        aria-modal={false}
         className={cn('bg-white rounded shadow-md ring-1 ring-black/5 p-2', className)}
         style={{ position: 'absolute', top: pos?.top ?? 0, left: pos?.left ?? 0, zIndex: 60 }}
       >

@@ -20,6 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 // Default Info Banner
 export const InfoBanner: Story = {
+  render: (args) => <Banner {...args} />,
   args: {
     variant: 'info',
     children: 'This is an informational message. It provides neutral feedback or instructions.',

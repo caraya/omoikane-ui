@@ -1,0 +1,26 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Molecules/DashboardCardGrid" />
+
+# DashboardCardGrid
+
+`DashboardCardGrid` is a medium-level molecule composed from smaller primitives: `CustomGrid`, `Card`, `Toolbar`, and `Popover`.
+
+It demonstrates composition patterns for dashboards or admin consoles where tiles have actions, can be placed precisely using grid coordinates, and may expose secondary UI (popovers) for details or actions.
+
+## Features
+
+- Precise placement via `col`, `row`, `colSpan`, `rowSpan` on card descriptors.
+- Responsive column behavior: collapses to 1 column on narrow viewports, 2 columns on medium screens, and honors the `columns` prop on larger viewports.
+- Accessible interactions:
+  - A skip link is provided to jump to the dashboard area.
+  - Action buttons announce they open a dialog via `aria-haspopup="dialog"` and are linked with `aria-controls`.
+  - The molecule uses the `Popover` primitive which focuses the popover panel when opened and handles `Escape` to close.
+
+## Composition Pattern
+
+Use `DashboardCardGrid` when you want a plug-and-play dashboard surface where cards may be rearranged by data (server-driven placement) or where certain cards need explicit placement without creating empty DOM rows.
+
+Basic usage is covered in the story `Molecules/DashboardCardGrid/Playground` which provides interactive knobs for columns, gap, and cards.
+
+***

@@ -3,7 +3,7 @@ import { DateSelect } from '../src/components/DateSelect';
 import { useState } from 'react';
 
 const meta = {
-  title: 'Components/Dates/DateSelect',
+  title: 'Dates/DateSelect',
   component: DateSelect,
   tags: ['autodocs'],
   argTypes: {

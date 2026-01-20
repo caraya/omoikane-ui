@@ -3,7 +3,7 @@ import { IconButton } from '../src/components/IconButton';
 import { MagnifyingGlassIcon, TrashIcon, XIcon, PencilSimpleIcon } from '@phosphor-icons/react';
 
 const meta = {
-  title: 'Components/Icons/IconButton',
+  title: 'Icons/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   argTypes: {
