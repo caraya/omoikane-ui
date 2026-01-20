@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
-    "@storybook/addon-test": "^0.0.0-pr-30727-sha-fe615277",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.4.0"
   },
