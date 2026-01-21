@@ -39,3 +39,6 @@ export * from './Switch';
 export * from './Tabs';
 export * from './Toolbar';
 export * from './Toast';
+export * from './molecules/SidebarLayout';
+export * from './molecules/DataTable';
+export * from './molecules/FormWizard';
