@@ -1,0 +1,1 @@
+import{p as s}from"../prism-DU08x7FD.js";import"../util-DdJteTVJ.js";import"../token-Dozwbq7Q.js";import"../insert-CpDsPTVw.js";import"../iterables-BnTatl6v.js";const t={id:"highlight-keywords",effect:s=>s.hooks.add("wrap",(s=>{"keyword"===s.type&&s.classes.push("keyword-"+s.content)}))};s.pluginRegistry.add(t);export{t as default};

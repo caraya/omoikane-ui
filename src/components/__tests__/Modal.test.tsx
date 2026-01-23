@@ -1,8 +1,11 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Modal';
+import Modal from '../Modal';
 
 describe('Modal', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders children when open', () => {
+    render(<Modal open={true}><div>Open</div></Modal>);
+    expect(screen.getByText('Open')).toBeTruthy();
   });
 });

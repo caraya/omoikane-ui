@@ -167,6 +167,81 @@ button:focus, [role="button"]:focus, a:focus, input:focus, textarea:focus {
   font-style: normal;
   font-variation-settings: 'MONO' 1;
 }
+
+./* Markdown content styling hook
+.   - 'omoikane-markdown' is a small, opinionated baseline so rendered HTML
+.     from markdown looks like other text in the design system.
+.   - We prefer Tailwind's 'prose' class where available, but include a
+.     minimal fallback so plain CSS consumers still look good.
+.*/
+.omoikane-markdown {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.omoikane-markdown h1,
+.omoikane-markdown h2,
+.omoikane-markdown h3,
+.omoikane-markdown h4 {
+  color: var(--color-text);
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+.omoikane-markdown p {
+  margin: 0.5em 0 1em 0;
+}
+.omoikane-markdown a { color: var(--color-primary); }
+.omoikane-markdown blockquote {
+  margin: 0.75em 0;
+  padding-left: 1rem;
+  border-left: 4px solid rgba(0,0,0,0.06);
+  color: var(--color-muted);
+}
+.omoikane-markdown pre {
+  background: var(--color-surface);
+  padding: 0.75rem;
+  border-radius: calc(var(--radius) / 2);
+  overflow: auto;
+}
+.omoikane-markdown code { font-family: 'Recursive', monospace; font-size: 0.95em; }
+.omoikane-markdown ul,
+.omoikane-markdown ol { margin: 0.5em 0 1em 1.25rem; }
+.omoikane-markdown table { width: 100%; border-collapse: collapse; margin: 0.75em 0; }
+.omoikane-markdown th,
+.omoikane-markdown td { border: 1px solid rgba(0,0,0,0.06); padding: 0.5rem; }
+.omoikane-markdown img { max-width: 100%; height: auto; }
+
+/* Central typography baseline used across components.
+  Prefer using Tailwind's 'prose' when available; these rules act as
+  a fallback so components look consistent even without Tailwind
+  processing (e.g. in Storybook runtime or tests).
+*/
+.omoikane-typography,
+.omoikane-root .omoikane-typography {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.omoikane-typography h1 { font-size: 2.25rem; line-height: 1.1; margin-top: 1.25rem; margin-bottom: .5rem; font-family: var(--font-sans); font-weight: 900; }
+.omoikane-typography h2 { font-size: 1.75rem; line-height: 1.15; margin-top: 1.25rem; margin-bottom: .5rem; font-family: var(--font-sans); font-weight: 700; }
+.omoikane-typography h3 { font-size: 1.25rem; line-height: 1.2; margin-top: 1rem; margin-bottom: .5rem; font-family: var(--font-sans); font-weight: 700; }
+.omoikane-typography p { margin: 0.5em 0 1em 0; }
+.omoikane-typography a { color: var(--color-primary); text-decoration: underline; }
+.omoikane-typography blockquote { margin: 0.75em 0; padding-left: 1rem; border-left: 4px solid rgba(0,0,0,0.06); color: var(--color-muted); }
+.omoikane-typography pre { background: var(--color-surface); padding: 0.75rem; border-radius: calc(var(--radius) / 2); overflow: auto; }
+.omoikane-typography code { font-family: 'Recursive', monospace; font-size: 0.95em; }
+.omoikane-typography ul, .omoikane-typography ol { margin: 0.5em 0 1em 1.25rem; }
+.omoikane-typography table { width: 100%; border-collapse: collapse; margin: 0.75em 0; }
+.omoikane-typography th, .omoikane-typography td { border: 1px solid rgba(0,0,0,0.06); padding: 0.5rem; }
+.omoikane-typography img { max-width: 100%; height: auto; }
+
+/* Allow opt-out: components that deliberately manage colors (e.g. color.js wrappers)
+  can add 'color-override' class so they won't be affected by global color rules.
+*/
+.color-override { color: inherit; }
 `;
 
 export const Styles: React.FC<{ children?: React.ReactNode; theme?: 'light' | 'dark' | 'auto' }> = ({ children, theme = 'auto' }) => {
@@ -246,6 +321,15 @@ export const Styles: React.FC<{ children?: React.ReactNode; theme?: 'light' | 'd
     el.id = STYLE_ID;
     el.innerHTML = CSS;
     document.head.appendChild(el);
+
+    // Ensure the application root carries an explicit class we can target
+    // so all module content can get a consistent baseline. Tests, Storybook,
+    // and apps will get this automatically when 'Styles' is mounted.
+    try {
+      if (document.body && !document.body.classList.contains('omoikane-root')) {
+        document.body.classList.add('omoikane-root');
+      }
+    } catch {}
 
     return () => {
       // keep styles for storybook hot reload — don't remove by default

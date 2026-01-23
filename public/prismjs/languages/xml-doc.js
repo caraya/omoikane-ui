@@ -1,0 +1,1 @@
+import a from"./markup.js";import"./xml.js";import"../patterns-A_vPglum.js";var r={id:"xml-doc",require:a,grammar({languages:a}){const r=a.markup.tag;return{slash:{pattern:/\/\/\/.*/,greedy:!0,alias:"comment",inside:{tag:r}},tick:{pattern:/'''.*/,greedy:!0,alias:"comment",inside:{tag:r}}}}};export{r as default};

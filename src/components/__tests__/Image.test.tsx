@@ -1,8 +1,11 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Image';
+import Image from '../Image';
 
 describe('Image', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders an img with provided src and alt', () => {
+    render(<Image src="/logo.png" alt="Logo" />);
+    expect(screen.getByAltText('Logo')).toBeTruthy();
   });
 });

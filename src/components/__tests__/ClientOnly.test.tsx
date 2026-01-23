@@ -1,8 +1,11 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../ClientOnly';
+import ClientOnly from '../ClientOnly';
 
 describe('ClientOnly', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders children', () => {
+    render(<ClientOnly><div>Child</div></ClientOnly>);
+    expect(screen.getByText('Child')).toBeTruthy();
   });
 });

@@ -1,8 +1,18 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Form';
+import { Form, FormSection } from '../Form';
 
 describe('Form', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders section title and children', () => {
+    render(
+      <Form>
+        <FormSection title="Group">
+          <div>Child</div>
+        </FormSection>
+      </Form>
+    );
+    expect(screen.getByText('Group')).toBeTruthy();
+    expect(screen.getByText('Child')).toBeTruthy();
   });
 });

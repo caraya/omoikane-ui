@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from '../../utils/cn';
 import Toolbar from '../Toolbar';
-import Tabs from '../Tabs';
 import CustomGrid, { GridItem } from '../CustomGrid';
 
 export interface SidebarLayoutProps {

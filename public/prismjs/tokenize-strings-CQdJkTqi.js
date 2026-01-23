@@ -1,0 +1,1 @@
+function t(t,n){const e=t=>{const e=n(t);if(1===e.length){const t=e[0];if("string"==typeof t)return t}return e},o=t=>{for(let n=0;n<t.length;n++){const s=t[n];if("string"==typeof s){const o=e(s);"string"==typeof o?t[n]=o:(t.splice(n,1,...o),n+=o.length-1)}else"string"==typeof s.content?s.content=e(s.content):o(s.content)}};o(t)}export{t};

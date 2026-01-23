@@ -1,0 +1,1020 @@
+{
+	"core": {
+		"js": 3408
+	},
+	"themes": {
+		"coy": {
+			"css": 3062
+		},
+		"dark": {
+			"css": 1533
+		},
+		"funky": {
+			"css": 1990
+		},
+		"okaidia": {
+			"css": 1380
+		},
+		"prism": {
+			"css": 1789
+		},
+		"solarizedlight": {
+			"css": 1589
+		},
+		"tomorrow": {
+			"css": 1313
+		},
+		"twilight": {
+			"css": 2440
+		}
+	},
+	"languages": {
+		"abap": {
+			"js": 7954
+		},
+		"abnf": {
+			"js": 916
+		},
+		"actionscript": {
+			"js": 833
+		},
+		"ada": {
+			"js": 941
+		},
+		"agda": {
+			"js": 750
+		},
+		"al": {
+			"js": 2651
+		},
+		"antlr4": {
+			"js": 1207
+		},
+		"apacheconf": {
+			"js": 8214
+		},
+		"apex": {
+			"js": 2117
+		},
+		"apl": {
+			"js": 807
+		},
+		"applescript": {
+			"js": 1803
+		},
+		"aql": {
+			"js": 1081
+		},
+		"arduino": {
+			"js": 4023
+		},
+		"arff": {
+			"js": 225
+		},
+		"armasm": {
+			"js": 1271
+		},
+		"arturo": {
+			"js": 3096
+		},
+		"asciidoc": {
+			"js": 4553
+		},
+		"asm6502": {
+			"js": 898
+		},
+		"asmatmel": {
+			"js": 1767
+		},
+		"aspnet": {
+			"js": 1014
+		},
+		"autohotkey": {
+			"js": 8783
+		},
+		"autoit": {
+			"js": 863
+		},
+		"avisynth": {
+			"js": 4928
+		},
+		"avro-idl": {
+			"js": 993
+		},
+		"awk": {
+			"js": 706
+		},
+		"bash": {
+			"js": 6059
+		},
+		"basic": {
+			"js": 1864
+		},
+		"batch": {
+			"js": 1696
+		},
+		"bbcode": {
+			"js": 454
+		},
+		"bbj": {
+			"js": 889
+		},
+		"bicep": {
+			"js": 1226
+		},
+		"birb": {
+			"js": 594
+		},
+		"bison": {
+			"js": 587
+		},
+		"bnf": {
+			"js": 309
+		},
+		"bqn": {
+			"js": 1362
+		},
+		"brainfuck": {
+			"js": 259
+		},
+		"brightscript": {
+			"js": 1021
+		},
+		"bro": {
+			"js": 1146
+		},
+		"bsl": {
+			"js": 1688
+		},
+		"c": {
+			"js": 1941
+		},
+		"cfscript": {
+			"js": 1177
+		},
+		"chaiscript": {
+			"js": 1272
+		},
+		"cil": {
+			"js": 2145
+		},
+		"cilkc": {
+			"js": 240
+		},
+		"cilkcpp": {
+			"js": 333
+		},
+		"clike": {
+			"js": 741
+		},
+		"clojure": {
+			"js": 3078
+		},
+		"cmake": {
+			"js": 10507
+		},
+		"cobol": {
+			"js": 5124
+		},
+		"coffeescript": {
+			"js": 1369
+		},
+		"concurnas": {
+			"js": 1811
+		},
+		"cooklang": {
+			"js": 1577
+		},
+		"coq": {
+			"js": 3035
+		},
+		"cpp": {
+			"js": 2607
+		},
+		"crystal": {
+			"js": 1402
+		},
+		"csharp": {
+			"js": 6013
+		},
+		"cshtml": {
+			"js": 2595
+		},
+		"csp": {
+			"js": 1160
+		},
+		"css": {
+			"js": 1359
+		},
+		"css-extras": {
+			"js": 2109
+		},
+		"css-selector": {
+			"js": 974
+		},
+		"csv": {
+			"js": 110
+		},
+		"cue": {
+			"js": 1462
+		},
+		"cypher": {
+			"js": 1066
+		},
+		"d": {
+			"js": 2072
+		},
+		"dart": {
+			"js": 1500
+		},
+		"dataweave": {
+			"js": 865
+		},
+		"dax": {
+			"js": 3467
+		},
+		"dhall": {
+			"js": 1188
+		},
+		"diff": {
+			"js": 515
+		},
+		"django": {
+			"js": 1137
+		},
+		"dns-zone-file": {
+			"js": 814
+		},
+		"docker": {
+			"js": 1468
+		},
+		"dot": {
+			"js": 1132
+		},
+		"ebnf": {
+			"js": 409
+		},
+		"editorconfig": {
+			"js": 381
+		},
+		"eiffel": {
+			"js": 978
+		},
+		"ejs": {
+			"js": 726
+		},
+		"elixir": {
+			"js": 1811
+		},
+		"elm": {
+			"js": 1047
+		},
+		"erb": {
+			"js": 674
+		},
+		"erlang": {
+			"js": 799
+		},
+		"etlua": {
+			"js": 569
+		},
+		"excel-formula": {
+			"js": 963
+		},
+		"factor": {
+			"js": 9872
+		},
+		"false": {
+			"js": 381
+		},
+		"firestore-security-rules": {
+			"js": 740
+		},
+		"flow": {
+			"js": 868
+		},
+		"fortran": {
+			"js": 1296
+		},
+		"fsharp": {
+			"js": 2168
+		},
+		"ftl": {
+			"js": 1934
+		},
+		"gap": {
+			"js": 998
+		},
+		"gcode": {
+			"js": 255
+		},
+		"gdscript": {
+			"js": 950
+		},
+		"gedcom": {
+			"js": 553
+		},
+		"gettext": {
+			"js": 534
+		},
+		"gherkin": {
+			"js": 9841
+		},
+		"git": {
+			"js": 267
+		},
+		"glsl": {
+			"js": 1150
+		},
+		"gml": {
+			"js": 8194
+		},
+		"gn": {
+			"js": 967
+		},
+		"go": {
+			"js": 968
+		},
+		"go-module": {
+			"js": 439
+		},
+		"gradle": {
+			"js": 1298
+		},
+		"graphql": {
+			"js": 2512
+		},
+		"groovy": {
+			"js": 1532
+		},
+		"haml": {
+			"js": 2123
+		},
+		"handlebars": {
+			"js": 997
+		},
+		"haskell": {
+			"js": 3028
+		},
+		"haxe": {
+			"js": 1510
+		},
+		"hcl": {
+			"js": 1425
+		},
+		"hlsl": {
+			"js": 1750
+		},
+		"hoon": {
+			"js": 520
+		},
+		"hpkp": {
+			"js": 216
+		},
+		"hsts": {
+			"js": 177
+		},
+		"http": {
+			"js": 1852
+		},
+		"ichigojam": {
+			"js": 790
+		},
+		"icon": {
+			"js": 963
+		},
+		"icu-message-format": {
+			"js": 1890
+		},
+		"idris": {
+			"js": 639
+		},
+		"iecst": {
+			"js": 1353
+		},
+		"ignore": {
+			"js": 277
+		},
+		"inform7": {
+			"js": 3304
+		},
+		"ini": {
+			"js": 640
+		},
+		"io": {
+			"js": 1747
+		},
+		"j": {
+			"js": 851
+		},
+		"java": {
+			"js": 2882
+		},
+		"javadoc": {
+			"js": 1405
+		},
+		"javadoclike": {
+			"js": 269
+		},
+		"javascript": {
+			"js": 4378
+		},
+		"javastacktrace": {
+			"js": 1575
+		},
+		"jexl": {
+			"js": 568
+		},
+		"jolie": {
+			"js": 1478
+		},
+		"jq": {
+			"js": 1136
+		},
+		"js-templates": {
+			"js": 1109
+		},
+		"jsdoc": {
+			"js": 1543
+		},
+		"json": {
+			"js": 453
+		},
+		"json5": {
+			"js": 429
+		},
+		"jsonp": {
+			"js": 221
+		},
+		"jsstacktrace": {
+			"js": 792
+		},
+		"jsx": {
+			"js": 2375
+		},
+		"julia": {
+			"js": 1046
+		},
+		"keepalived": {
+			"js": 5689
+		},
+		"keyman": {
+			"js": 1037
+		},
+		"kotlin": {
+			"js": 1751
+		},
+		"kumir": {
+			"js": 1616
+		},
+		"kusto": {
+			"js": 1568
+		},
+		"latex": {
+			"js": 996
+		},
+		"latte": {
+			"js": 1215
+		},
+		"less": {
+			"js": 695
+		},
+		"lilypond": {
+			"js": 1143
+		},
+		"linker-script": {
+			"js": 486
+		},
+		"liquid": {
+			"js": 2231
+		},
+		"lisp": {
+			"js": 2456
+		},
+		"livescript": {
+			"js": 1902
+		},
+		"llvm": {
+			"js": 565
+		},
+		"log": {
+			"js": 2574
+		},
+		"lolcode": {
+			"js": 1197
+		},
+		"lua": {
+			"js": 631
+		},
+		"magma": {
+			"js": 1161
+		},
+		"makefile": {
+			"js": 972
+		},
+		"markdown": {
+			"js": 4739
+		},
+		"markup": {
+			"js": 1302
+		},
+		"mata": {
+			"js": 1172
+		},
+		"matlab": {
+			"js": 465
+		},
+		"maxscript": {
+			"js": 1600
+		},
+		"mel": {
+			"js": 832
+		},
+		"mermaid": {
+			"js": 2113
+		},
+		"metafont": {
+			"js": 4535
+		},
+		"mizar": {
+			"js": 1078
+		},
+		"mongodb": {
+			"js": 3416
+		},
+		"monkey": {
+			"js": 910
+		},
+		"moonscript": {
+			"js": 1945
+		},
+		"n1ql": {
+			"js": 1831
+		},
+		"n4js": {
+			"js": 645
+		},
+		"nand2tetris-hdl": {
+			"js": 290
+		},
+		"naniscript": {
+			"js": 1769
+		},
+		"nasm": {
+			"js": 732
+		},
+		"neon": {
+			"js": 1039
+		},
+		"nevod": {
+			"js": 2001
+		},
+		"nginx": {
+			"js": 748
+		},
+		"nim": {
+			"js": 1174
+		},
+		"nix": {
+			"js": 1237
+		},
+		"nsis": {
+			"js": 3807
+		},
+		"objectivec": {
+			"js": 678
+		},
+		"ocaml": {
+			"js": 1204
+		},
+		"odin": {
+			"js": 1466
+		},
+		"opencl": {
+			"js": 1822
+		},
+		"opencl-extensions": {
+			"js": 8060
+		},
+		"openqasm": {
+			"js": 795
+		},
+		"oz": {
+			"js": 857
+		},
+		"parigp": {
+			"js": 831
+		},
+		"parser": {
+			"js": 1449
+		},
+		"pascal": {
+			"js": 1879
+		},
+		"pascaligo": {
+			"js": 1215
+		},
+		"pcaxis": {
+			"js": 808
+		},
+		"peoplecode": {
+			"js": 1200
+		},
+		"perl": {
+			"js": 2191
+		},
+		"php": {
+			"js": 6689
+		},
+		"php-extras": {
+			"js": 342
+		},
+		"phpdoc": {
+			"js": 586
+		},
+		"plain": {
+			"js": 85
+		},
+		"plant-uml": {
+			"js": 2157
+		},
+		"plsql": {
+			"js": 2749
+		},
+		"powerquery": {
+			"js": 1912
+		},
+		"powershell": {
+			"js": 2139
+		},
+		"processing": {
+			"js": 505
+		},
+		"prolog": {
+			"js": 380
+		},
+		"promql": {
+			"js": 1245
+		},
+		"properties": {
+			"js": 339
+		},
+		"protobuf": {
+			"js": 984
+		},
+		"psl": {
+			"js": 3212
+		},
+		"pug": {
+			"js": 2828
+		},
+		"puppet": {
+			"js": 2454
+		},
+		"pure": {
+			"js": 3273
+		},
+		"purebasic": {
+			"js": 2416
+		},
+		"purescript": {
+			"js": 2276
+		},
+		"python": {
+			"js": 2017
+		},
+		"q": {
+			"js": 1746
+		},
+		"qml": {
+			"js": 1488
+		},
+		"qore": {
+			"js": 1037
+		},
+		"qsharp": {
+			"js": 1798
+		},
+		"r": {
+			"js": 559
+		},
+		"racket": {
+			"js": 264
+		},
+		"reason": {
+			"js": 812
+		},
+		"regex": {
+			"js": 1306
+		},
+		"rego": {
+			"js": 616
+		},
+		"renpy": {
+			"js": 4293
+		},
+		"rescript": {
+			"js": 1504
+		},
+		"rest": {
+			"js": 3574
+		},
+		"rip": {
+			"js": 804
+		},
+		"roboconf": {
+			"js": 483
+		},
+		"robotframework": {
+			"js": 1424
+		},
+		"ruby": {
+			"js": 3318
+		},
+		"rust": {
+			"js": 2347
+		},
+		"sas": {
+			"js": 7403
+		},
+		"sass": {
+			"js": 996
+		},
+		"scala": {
+			"js": 1358
+		},
+		"scheme": {
+			"js": 4010
+		},
+		"scss": {
+			"js": 1221
+		},
+		"shell-session": {
+			"js": 866
+		},
+		"smali": {
+			"js": 1393
+		},
+		"smalltalk": {
+			"js": 675
+		},
+		"smarty": {
+			"js": 1890
+		},
+		"sml": {
+			"js": 1416
+		},
+		"solidity": {
+			"js": 1008
+		},
+		"solution-file": {
+			"js": 675
+		},
+		"soy": {
+			"js": 1779
+		},
+		"sparql": {
+			"js": 937
+		},
+		"splunk-spl": {
+			"js": 1729
+		},
+		"sqf": {
+			"js": 33374
+		},
+		"sql": {
+			"js": 3294
+		},
+		"squirrel": {
+			"js": 1089
+		},
+		"stan": {
+			"js": 1464
+		},
+		"stata": {
+			"js": 1669
+		},
+		"stylus": {
+			"js": 3786
+		},
+		"supercollider": {
+			"js": 849
+		},
+		"swift": {
+			"js": 2862
+		},
+		"systemd": {
+			"js": 734
+		},
+		"t4-cs": {
+			"js": 181
+		},
+		"t4-vb": {
+			"js": 168
+		},
+		"tap": {
+			"js": 436
+		},
+		"tcl": {
+			"js": 1541
+		},
+		"textile": {
+			"js": 3402
+		},
+		"toml": {
+			"js": 960
+		},
+		"treeview": {
+			"js": 1075
+		},
+		"tremor": {
+			"js": 1476
+		},
+		"tsx": {
+			"js": 579
+		},
+		"tt2": {
+			"js": 1297
+		},
+		"turtle": {
+			"js": 915
+		},
+		"twig": {
+			"js": 1081
+		},
+		"typescript": {
+			"js": 1331
+		},
+		"typoscript": {
+			"js": 1372
+		},
+		"unrealscript": {
+			"js": 1777
+		},
+		"uorazor": {
+			"js": 2424
+		},
+		"uri": {
+			"js": 1193
+		},
+		"v": {
+			"js": 1811
+		},
+		"vala": {
+			"js": 1973
+		},
+		"vbnet": {
+			"js": 1860
+		},
+		"velocity": {
+			"js": 1272
+		},
+		"verilog": {
+			"js": 2129
+		},
+		"vhdl": {
+			"js": 1117
+		},
+		"vim": {
+			"js": 14241
+		},
+		"visual-basic": {
+			"js": 1846
+		},
+		"warpscript": {
+			"js": 653
+		},
+		"wasm": {
+			"js": 1241
+		},
+		"web-idl": {
+			"js": 2064
+		},
+		"wgsl": {
+			"js": 3479
+		},
+		"wiki": {
+			"js": 1207
+		},
+		"wolfram": {
+			"js": 792
+		},
+		"wren": {
+			"js": 1330
+		},
+		"xeora": {
+			"js": 1813
+		},
+		"xml": {
+			"js": 1229
+		},
+		"xml-doc": {
+			"js": 314
+		},
+		"xojo": {
+			"js": 1154
+		},
+		"xquery": {
+			"js": 3898
+		},
+		"yaml": {
+			"js": 1884
+		},
+		"yang": {
+			"js": 337
+		},
+		"zig": {
+			"js": 2223
+		}
+	},
+	"plugins": {
+		"autolinker": {
+			"js": 818,
+			"css": 23
+		},
+		"autoloader": {
+			"js": 218
+		},
+		"command-line": {
+			"js": 2656,
+			"css": 751
+		},
+		"copy-to-clipboard": {
+			"js": 1756
+		},
+		"custom-class": {
+			"js": 739
+		},
+		"data-uri-highlight": {
+			"js": 967
+		},
+		"diff-highlight": {
+			"js": 1440,
+			"css": 336
+		},
+		"download-button": {
+			"js": 664
+		},
+		"file-highlight": {
+			"js": 2001
+		},
+		"filter-highlight-all": {
+			"js": 1130
+		},
+		"highlight-keywords": {
+			"js": 335
+		},
+		"inline-color": {
+			"js": 1194,
+			"css": 529
+		},
+		"jsonp-highlight": {
+			"js": 3428
+		},
+		"keep-markup": {
+			"js": 1553
+		},
+		"line-highlight": {
+			"js": 4101,
+			"css": 1133
+		},
+		"line-numbers": {
+			"js": 2805,
+			"css": 609
+		},
+		"match-braces": {
+			"js": 2211,
+			"css": 758
+		},
+		"normalize-whitespace": {
+			"js": 2752
+		},
+		"previewers": {
+			"js": 9982,
+			"css": 4319
+		},
+		"show-invisibles": {
+			"js": 497,
+			"css": 386
+		},
+		"show-language": {
+			"js": 5966
+		},
+		"toolbar": {
+			"js": 2099,
+			"css": 1196
+		},
+		"treeview-icons": {
+			"js": 327,
+			"css": 7835
+		},
+		"unescaped-markup": {
+			"js": 1055,
+			"css": 250
+		},
+		"wpd": {
+			"js": 2602,
+			"css": 205
+		}
+	}
+}

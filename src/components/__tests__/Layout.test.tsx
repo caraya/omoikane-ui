@@ -1,8 +1,11 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Layout';
+import Layout from '../Layout';
 
 describe('Layout', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders children inside layout', () => {
+    render(<Layout><div>Content</div></Layout>);
+    expect(screen.getByText('Content')).toBeTruthy();
   });
 });

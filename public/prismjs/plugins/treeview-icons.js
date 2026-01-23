@@ -1,0 +1,1 @@
+import{p as i}from"../prism-DU08x7FD.js";import t from"../languages/treeview.js";import"../util-DdJteTVJ.js";import"../token-Dozwbq7Q.js";import"../insert-CpDsPTVw.js";import"../iterables-BnTatl6v.js";import"../without-tokenize-Bwi0ec2C.js";const e={id:"treeview-icons",require:t};i.pluginRegistry.add(e);export{e as default};

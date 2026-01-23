@@ -1,8 +1,11 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Banner';
+import Banner from '../Banner';
 
 describe('Banner', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders banner text', () => {
+    render(<Banner>Notice</Banner>);
+    expect(screen.getByText('Notice')).toBeTruthy();
   });
 });

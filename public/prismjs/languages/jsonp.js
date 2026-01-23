@@ -1,0 +1,1 @@
+import a from"./json.js";var n={id:"jsonp",base:a,grammar:()=>({punctuation:/[{}[\]();,.]/,$insertBefore:{punctuation:{function:/(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*\()/}}})};export{n as default};

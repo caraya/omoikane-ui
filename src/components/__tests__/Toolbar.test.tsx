@@ -1,8 +1,17 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Toolbar';
+import Toolbar from '../Toolbar';
 
 describe('Toolbar', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders children and layout', () => {
+    render(
+      <Toolbar>
+        <div>Left</div>
+        <div>Right</div>
+      </Toolbar>
+    );
+    expect(screen.getByText('Left')).toBeTruthy();
+    expect(screen.getByText('Right')).toBeTruthy();
   });
 });

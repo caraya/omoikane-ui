@@ -1,8 +1,13 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Toast';
+import Toast from '../Toast';
 
 describe('Toast', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders when visible and hides when not', () => {
+    const { rerender } = render(<Toast visible={true}>Hello</Toast>);
+    expect(screen.getByRole('status')).toHaveTextContent('Hello');
+    rerender(<Toast visible={false}>Hello</Toast>);
+    expect(screen.queryByRole('status')).toBeNull();
   });
 });

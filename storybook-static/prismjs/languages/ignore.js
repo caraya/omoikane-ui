@@ -1,0 +1,1 @@
+var e={id:"ignore",alias:["gitignore","hgignore","npmignore"],grammar:()=>({comment:/^#.*/m,entry:{pattern:/\S(?:.*(?:(?:\\ )|\S))?/,alias:"string",inside:{operator:/^!|\*\*?|\?/,regex:{pattern:/(^|[^\\])\[[^\[\]]*\]/,lookbehind:!0},punctuation:/\//}}})};export{e as default};

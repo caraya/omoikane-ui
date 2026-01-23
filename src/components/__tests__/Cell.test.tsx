@@ -1,8 +1,12 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../Cell';
+import { DetailCell } from '../Cell';
 
 describe('Cell', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders title and subtitle', () => {
+    render(<DetailCell title="T" subtitle1="S" />);
+    expect(screen.getByText('T')).toBeTruthy();
+    expect(screen.getByText('S')).toBeTruthy();
   });
 });

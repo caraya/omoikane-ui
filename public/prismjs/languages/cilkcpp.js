@@ -1,0 +1,1 @@
+import r from"./cpp.js";import"../insert-CpDsPTVw.js";import"../iterables-BnTatl6v.js";import"./c.js";import"./clike.js";var e={id:"cilkcpp",base:r,alias:["cilk-cpp","cilk"],grammar:()=>({$insert:{"parallel-keyword":{$before:"function",pattern:/\bcilk_(?:for|reducer|s(?:cope|pawn|ync))\b/,alias:"keyword"}}})};export{e as default};

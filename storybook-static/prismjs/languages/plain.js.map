@@ -1,0 +1,1 @@
+{"version":3,"file":"plain.js","sources":["../../src/languages/plain.js"],"sourcesContent":["/** @type {import('../types.d.ts').LanguageProto<'plain'>} */\nexport default {\n\tid: 'plain',\n\talias: ['text', 'txt', 'plaintext'],\n\tgrammar: {},\n};\n"],"names":["plain","id","alias","grammar"],"mappings":"AACA,IAAeA,EAAA,CACdC,GAAI,QACJC,MAAO,CAAC,OAAQ,MAAO,aACvBC,QAAS,CAAE"}

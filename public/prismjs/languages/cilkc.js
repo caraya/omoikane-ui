@@ -1,0 +1,1 @@
+import r from"./c.js";import"./clike.js";var a={id:"cilkc",base:r,alias:"cilk-c",grammar:()=>({$insert:{"parallel-keyword":{$before:"function",pattern:/\bcilk_(?:for|reducer|s(?:cope|pawn|ync))\b/,alias:"keyword"}}})};export{a as default};

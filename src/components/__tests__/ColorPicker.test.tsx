@@ -1,8 +1,13 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import * as Module from '../ColorPicker';
+import ColorPicker from '../ColorPicker';
 
 describe('ColorPicker', () => {
-  it('loads module', () => {
-    expect(Module).toBeTruthy();
+  it('renders without crashing and shows input', () => {
+    render(<ColorPicker />);
+    // ColorPicker may render an input of type color or similar
+    const input = screen.queryByRole('textbox') || document.querySelector('input[type="color"]');
+    expect(input).toBeTruthy();
   });
 });

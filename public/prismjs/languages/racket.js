@@ -1,0 +1,1 @@
+import a from"./scheme.js";var e={id:"racket",base:a,alias:"rkt",grammar:()=>({"lambda-parameter":{pattern:/([(\[]lambda\s+[(\[])[^()\[\]'\s]+/,lookbehind:!0},$insert:{lang:{$before:"string",pattern:/^#lang.+/m,greedy:!0,alias:"keyword"}}})};export{e as default};
